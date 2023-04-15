@@ -1,5 +1,6 @@
 import random
 import pytest
+import asyncio
 
 # Define the possible tokens
 tokens = [
@@ -142,3 +143,26 @@ async def test_query_nested_objects(gql_client):
                 found = True
                 break
         assert found == True
+
+
+#Define the test case for load testing
+@pytest.mark.asyncio
+async def test_load_testing(gql_client):
+    # Number of times to call each test function concurrently
+    num_concurrent_tests = 2
+
+    async def run_test(test_func, client):
+        return await test_func(client)
+
+    test_funcs = [
+        test_query_single_object,
+        test_query_multiple_objects,
+        test_query_nested_objects,
+    ]
+
+    tasks = [
+        run_test(test_func, gql_client) for test_func in test_funcs for _ in range(num_concurrent_tests)
+    ]
+
+    # Use asyncio.gather to run tasks concurrently
+    await asyncio.gather(*tasks)
