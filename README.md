@@ -14,7 +14,6 @@ This guide provides a comprehensive set of test cases for thoroughly testing a G
   - [3. Performance Test Cases ](#3-performance-test-cases-)
     - [3.1 Load Testing ](#31-load-testing-)
     - [3.2 Stress Testing ](#32-stress-testing-)
-  - [Conclusion](#conclusion)
 
 ## 1. Functional Test Cases <a name="functional-test-cases"></a>
 
