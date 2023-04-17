@@ -14,6 +14,7 @@ This guide provides a comprehensive set of test cases for thoroughly testing a G
   - [3. Performance Test Cases ](#3-performance-test-cases-)
     - [3.1 Load Testing ](#31-load-testing-)
     - [3.2 Stress Testing ](#32-stress-testing-)
+- [Running the Tests](#running-the-tests)
 
 ## 1. Functional Test Cases <a name="functional-test-cases"></a>
 
@@ -55,3 +56,30 @@ This guide provides a comprehensive set of test cases for thoroughly testing a G
 1. **Testing query stress**: Test the ability of the GraphQL server to handle a large volume of queries.
 2. **Testing mutation stress**: Test the ability of the GraphQL server to handle a large volume of mutations.
 3. **Testing subscription stress**: Test the ability of the GraphQL server to handle a large volume of subscriptions.
+
+
+# Running the Tests
+
+To run the pytest repo, follow these steps:
+
+1. Install the required dependencies by running the following command in your terminal:
+
+```
+
+python3 -m pytest -s --html=report.html
+
+```
+
+
+2. Once the dependencies are installed, run the following command to execute the tests:
+
+```
+
+python3 -m pytest --html=report.html
+
+```
+
+
+This will run all the test cases in the repo and generate an HTML report at the end. You can view the report by opening the `report.html` file in your browser.
+
+The `-s` option is used to print the console output while running the tests. You can omit this option if you don't want to see the console output.

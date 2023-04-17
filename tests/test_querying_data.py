@@ -21,7 +21,7 @@ tokens = [
     "tokenBalances { tokenId amount blockchain }"
 ]
 
-# Define the common variables for both test cases
+# Define the common variables for test cases
 variables = {
     "input": {
         "blockchain": "ethereum",
@@ -35,7 +35,7 @@ variables = {
     }
 }
 
-# Define the query for single object
+# Define the query
 
 query_token = '''
 query Test1($input: TokensInput!) {
